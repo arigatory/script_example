@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 X=/home
 echo $X
 NOW=$(date)
@@ -31,3 +32,27 @@ if [ "test.txt" -ot "test2.txt" ]
 then
     echo "test.txt is older than test2.txt"
 fi
+
+DIRECTORIES="/test1 /test2 /test3"
+for DIRNAME in $DIRECTORIES
+do
+    echo "Directory: $DIRNAME"
+done
+
+for i in {1..10}
+do
+    echo "test $i"
+done
+
+COUNTER=0
+while [[ $COUNTER -lt 10 ]]
+do
+    echo "The counter is $COUNTER"
+    let COUNTER=COUNTER+1
+done
+
+while [[ "$1" != "" ]]
+do
+    echo "Parameter =  $1"
+    shift
+done
